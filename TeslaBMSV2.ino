@@ -384,6 +384,7 @@ void setup()
 
 void loop()
 {
+	SERIALCONSOLE.println(millis());
   while (Can0.available())
   {
     canread();
