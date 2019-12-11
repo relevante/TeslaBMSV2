@@ -746,7 +746,7 @@ void loop()
     }
     updateSOC();
     currentlimit();
-    VEcan();
+    // VEcan();
 
 
     if (cellspresent == 0 && SOCset == 1)
@@ -1479,7 +1479,6 @@ void calcur()
 
 void VEcan() //communication with Victron system over CAN
 {
-	SERIALCONSOLE.println("Sending VEcan data");
   msg.id  = 0x351;
   msg.len = 8;
   if (storagemode == 0)
@@ -1543,6 +1542,9 @@ void VEcan() //communication with Victron system over CAN
   msg.buf[6] = 0;
   msg.buf[7] = 0;
   Can0.write(msg);
+	SERIALCONSOLE.print("Sent VECan current: ");
+	SERIALCONSOLE.print(currentact);
+	SERIALCONSOLE.println();
 
   delay(2);
   msg.id  = 0x35A;
@@ -2845,6 +2847,7 @@ void handleVictronLynx()
     Serial.print(CANmilliamps);
     Serial.print("mA ");
   }
+  VEcan();
 }
 
 void currentlimit()
