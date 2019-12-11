@@ -403,11 +403,6 @@ void loop()
     canread();
   }
 	
-	if(newVictronCurrentData) {
-		VEcan();
-		newVictronCurrentData = false;
-	}
-
   if (SERIALCONSOLE.available() > 0)
   {
     menu();
@@ -710,6 +705,11 @@ void loop()
       getcurrent();
     }
   }
+
+	if(newVictronCurrentData) {
+		VEcan();
+		newVictronCurrentData = false;
+	}
 
   if (millis() - looptime > 500)
   {
