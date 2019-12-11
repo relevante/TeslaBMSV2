@@ -382,21 +382,21 @@ void setup()
   Pretimer1  = millis();
 }
 
-int lastMillis = 0;
+// int lastMillis = 0;
 
 void loop()
 {
-	int nowMillis = millis();
-	if(lastMillis != 0) {
-		if(nowMillis - lastMillis > 10) {
-			SERIALCONSOLE.print(nowMillis);
-			SERIALCONSOLE.print(" -> ");
-			SERIALCONSOLE.print(lastMillis);
-			SERIALCONSOLE.print(" -> ");
-			SERIALCONSOLE.print(nowMillis-lastMillis);
-		}
-	}
-	lastMillis = nowMillis;
+	// int nowMillis = millis();
+	// if(lastMillis != 0) {
+	// 	if(nowMillis - lastMillis > 10) {
+	// 		SERIALCONSOLE.print(nowMillis);
+	// 		SERIALCONSOLE.print(" -> ");
+	// 		SERIALCONSOLE.print(lastMillis);
+	// 		SERIALCONSOLE.print(" -> ");
+	// 		SERIALCONSOLE.print(nowMillis-lastMillis);
+	// 	}
+	// }
+	// lastMillis = nowMillis;
 
   while (Can0.available())
   {
