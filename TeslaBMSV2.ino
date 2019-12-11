@@ -706,10 +706,10 @@ void loop()
     }
   }
 
-	if(newVictronCurrentData) {
-		VEcan();
-		newVictronCurrentData = false;
-	}
+	// if(newVictronCurrentData) {
+	// 	VEcan();
+	// 	newVictronCurrentData = false;
+	// }
 
   if (millis() - looptime > 500)
   {
@@ -766,7 +766,7 @@ void loop()
     }
     updateSOC();
     currentlimit();
-    // VEcan();
+    VEcan();
 
 
     if (cellspresent == 0 && SOCset == 1)
