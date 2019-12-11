@@ -1562,6 +1562,7 @@ void VEcan() //communication with Victron system over CAN
   msg.buf[6] = 0;
   msg.buf[7] = 0;
   Can0.write(msg);
+  SERIALCONSOLE.print(millis());
 	SERIALCONSOLE.print("Sent VECan current: ");
 	SERIALCONSOLE.print(currentact);
 	SERIALCONSOLE.print(", temp: ");
