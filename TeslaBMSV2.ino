@@ -142,6 +142,7 @@ unsigned long lasttime;
 unsigned long looptime, looptime1, UnderTime, cleartime, baltimer = 0; //ms
 int currentsense = 14;
 int sensor = 1;
+bool newVictronCurrentData = false;
 
 //Variables for SOC calc
 int SOC = 100; //State of Charge
@@ -387,6 +388,11 @@ void loop()
   {
     canread();
   }
+	
+	if(newVictronCurrentData) {
+		VEcan();
+		newVictronCurrentData = false;
+	}
 
   if (SERIALCONSOLE.available() > 0)
   {
@@ -746,7 +752,7 @@ void loop()
     }
     updateSOC();
     currentlimit();
-    VEcan();
+    // VEcan();
 
 
     if (cellspresent == 0 && SOCset == 1)
@@ -2849,7 +2855,7 @@ void handleVictronLynx()
     Serial.print(CANmilliamps);
     Serial.print("mA ");
   }
-  // VEcan();
+	newVictronCurrentData = true;
 }
 
 void currentlimit()
