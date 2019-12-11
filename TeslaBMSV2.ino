@@ -746,7 +746,7 @@ void loop()
     }
     updateSOC();
     currentlimit();
-    // VEcan();
+    VEcan();
 
 
     if (cellspresent == 0 && SOCset == 1)
@@ -2849,7 +2849,7 @@ void handleVictronLynx()
     Serial.print(CANmilliamps);
     Serial.print("mA ");
   }
-  VEcan();
+  // VEcan();
 }
 
 void currentlimit()
