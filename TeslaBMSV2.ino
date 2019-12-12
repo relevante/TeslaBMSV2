@@ -1567,6 +1567,8 @@ void VEcan() //communication with Victron system over CAN
 	SERIALCONSOLE.print(currentact);
 	SERIALCONSOLE.print(", temp: ");
 	SERIALCONSOLE.print(bms.getAvgTemperature() * 10);
+	SERIALCONSOLE.print(", chargecurrent: ");
+	SERIALCONSOLE.print(chargecurrent);
 	SERIALCONSOLE.println();
 
   delay(2);
